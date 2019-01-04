@@ -19,10 +19,21 @@ module.exports = function(app) {
     app.get("/", function(req, res) {
         db.Reading.findAll({
            ////look to order in descend
+           limit: 6,
            order: [['id', 'DESC']]
         }).then(function(data) {
            console.log(data);
            res.render("index", { readings: data });
+            
+        });
+    });
+
+    app.get("/database", function(req, res) {
+        db.Reading.findAll({
+           ////look to order in descend
+        }).then(function(data) {
+           console.log(data);
+           res.json(data);
             
         });
     });
@@ -61,4 +72,39 @@ module.exports = function(app) {
             res.json(result);
         });
     });
+
+    app.get("/api/lowest", function(req, res) {
+        db.Reading.findAll({
+           ////look to order in descend
+           limit: 6,
+           order: [['perGallon', 'ASC']]
+        }).then(function(data) {
+           console.log(data);
+           res.render("lowest", { readings: data });
+            
+        });
+    });
+
+    app.get("/api/store", function(req, res) {
+        db.Reading.findAll({
+           ////look to order in descend
+           limit: 6,
+           order: [['place', 'ASC']]
+        }).then(function(data) {
+           console.log(data);
+           res.render("store", { readings: data });
+            
+        });
+    });
+
+    app.post("/api/image", function(req, res) {
+        res.json({
+          id: 0,
+          place: "Joe's Gas @ 123 Fake St",
+          date: "2019-01-03",
+          gallons: 9.142,
+          price: 26.32,
+          perGallon: 2.879
+        });
+      });
 };

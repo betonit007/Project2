@@ -13,10 +13,7 @@ body {
     border: 3px solid black;
     padding: 10px;
     min-width: 500px;
-    background-image: url("/assets/img/fuel+.png");
-    background-repeat: no-repeat;
-    background-size:100% auto;
-    background-position: 55px 100px;
+    
     
   }
   #header {
@@ -34,7 +31,11 @@ body {
     flex:1;
     order:1;
     text-align: center;
-    background-color: #68b333;
+    background-color: #b4ecb4;
+    background-image: url("/assets/img/fuel+.png");
+    background-repeat: no-repeat;
+    background-size:100% auto;
+    background-position: 15px 170px;
     width: 50px;
     margin: 5px;
     overflow: hidden;
@@ -45,7 +46,11 @@ body {
     flex:1;
     order: 3;
     text-align: center;
-    background-color: #68b333;
+    background-color: #b4ecb4;
+    background-image: url("/assets/img/fuel+.png");
+    background-repeat: no-repeat;
+    background-size:100% auto;
+    background-position: 15px 170px;
     margin: 5px;
     padding:2px;
    
@@ -55,7 +60,6 @@ body {
     text-align: center;
     flex:1;
     order:2;
-    background-color: aqua;
     margin: 5px;
   }
 
@@ -68,7 +72,9 @@ body {
 
 
 #footer {
-text-align: center;
+display: flex;
+justify-content: space-between;
+margin: 0 100px;
 }
 
 #subButton, #edit-btn {
